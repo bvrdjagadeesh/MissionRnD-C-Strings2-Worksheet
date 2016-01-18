@@ -16,12 +16,10 @@ char* get_last_word(char * str){
 	int i=0;
 	res = (char*)malloc(sizeof(char));
 	int l = leng(str);
-	while (str[l] == ' '&&str[l]=='\0')
-		l--;
-	while (str[l]!= ' ')
-		l--;
-	l++;
-	while(str[l] != '\0')
+	l--;
+	while (str[l] == ' ' && l != 0)l--;
+	while (str[l] != ' ' && l != 0)l--;
+	while (str[l] != ' ' && str[l] != '\0')
 		res[i++] = str[l++];
 	res[i] = '\0';
 	return res;
